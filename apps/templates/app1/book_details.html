@@ -1,0 +1,77 @@
+{% load static %}
+
+{% block title %}Book Details Page{% endblock title %}
+
+{% block stylesheets %}
+<style>
+    h1 {
+        background-color: purple;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        font-size: 2em;
+        font-weight: bold;
+        margin-top: 0;
+        font-family: Times New Roman;
+    }
+
+    table {
+        width: 20%;
+        margin: 20px auto;
+        font-size: 1em;
+        font-family: Times New Roman;
+        text-align: center;
+    }
+
+    table th, td {
+        border: 1px solid black;
+    }
+
+    th {
+        background-color: purple;
+        padding: 10px;
+        font-weight: bold;
+    }
+
+    td {
+        padding: 8px;
+    }
+
+    caption {
+        font-size: 1.2em;
+        margin: 10px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .button {
+        background-color: lightgreen;
+        border: none;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+</style>
+{% endblock stylesheets %}
+
+{% block content %}
+<h1>{{ book.title }}</h1>
+<table>
+    <tr>
+        <th>Author</th>
+        <th>Book ID</th>
+    </tr>
+    <tr>
+        <td>{{ book.author.name }}</td>  <!-- Show the author's name -->
+        <td>{{ book.id }}</td>
+    </tr>
+</table>
+
+<hr>
+<a href="{% url 'list_books' %}" class="button">Back to All Books</a>  <!-- Corrected URL and added button styling -->
+{% endblock content %}

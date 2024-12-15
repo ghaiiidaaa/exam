@@ -1,0 +1,60 @@
+
+{% load static %}
+
+{% block title %}Landing Page (Home Page){% endblock title %}
+
+{% block stylesheets %}
+<style>
+    h1 {
+        background-color: purple; 
+        color: white;
+        padding: 15px;
+        text-align: center; 
+        font-size: 2em;
+        font-weight: bold; 
+        margin-top: 0;
+        font-family: Times New Roman;
+    }
+    table {
+        width: 20%;
+        margin: 20px auto; 
+        font-size: 1em;
+        font-family: Times New Roman; 
+        text-align: center;
+    }
+    table, th, td {
+        border: 1px solid black;
+    }
+    th {
+        background-color: purple; 
+        padding: 10px; 
+        font-weight: bold;
+    }
+    td {
+        padding: 8px;
+    }
+    caption {
+        font-size: 1.2em;
+        margin: 10px;
+        text-align: center;
+        font-weight: bold;
+    }
+</style>
+{% endblock stylesheets %}
+
+{% block content %}
+<h1>Welcome To Ghaida's Web Page</h1>
+<hr>
+<h2> To View The List of The Books </h2>
+<a href="{% url 'list_books' %}">View Books</a> <!-- Use Django URL tag -->
+
+<br>
+{% comment %}
+<h2> To Show A Selected Book </h2>
+<a href = "books/">Press To Navigate</a>
+{% endcomment %}
+<br><br><hr>
+
+<p><strong>All Rights Reserved to Ghaida's Website </strong></p> 
+<p>It's The First-Last Final</p>
+{% endblock content %}

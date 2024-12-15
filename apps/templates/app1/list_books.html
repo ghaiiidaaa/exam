@@ -1,0 +1,65 @@
+{% load static %}
+
+{% block title %}Landing Page (Home Page){% endblock title %}
+
+{% block stylesheets %}
+<style>
+    h1 {
+        background-color: purple; 
+        color: white;
+        padding: 15px;
+        text-align: center; 
+        font-size: 2em;
+        font-weight: bold; 
+        margin-top: 0;
+        font-family: Times New Roman;
+    }
+    table {
+        width: 20%;
+        margin: 20px auto; 
+        font-size: 1em;
+        font-family: Times New Roman; 
+        text-align: center;
+    }
+    table, th, td {
+        border: 1px solid black;
+    }
+    th {
+        background-color: purple; 
+        padding: 10px; 
+        font-weight: bold;
+    }
+    td {
+        padding: 8px;
+    }
+    caption {
+        font-size: 1.2em;
+        margin: 10px;
+        text-align: center;
+        font-weight: bold;
+    }
+</style>
+{% endblock stylesheets %}
+
+
+
+{% block content %}
+<h1>All books</h1>
+<table>
+
+    <tr>
+        <th> Title </th>
+        <th> Author </th>
+    </tr>
+    {% for book in books %}
+     <tr>
+        <td>
+        <!-- Link to the book detail page -->
+        <a href="{% url 'book_details' book.id %}">{{ book.title }}</a>
+        </td>
+        <td>{{ book.author }}
+        </td>
+         </tr>
+            {% endfor %}
+</table>
+{% endblock content %}
